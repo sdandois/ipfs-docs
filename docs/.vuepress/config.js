@@ -234,6 +234,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   'how-to/address-ipfs-on-web',
+                  'how-to/detect-ipfs-on-web',
                   'how-to/create-simple-chat-app',
                   '/how-to/browser-tools-frameworks'
                 ]
@@ -443,7 +444,25 @@ module.exports = {
     ],
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs',
-    'vuepress-plugin-mermaidjs',
+    [
+      'vuepress-plugin-mermaidjs',
+      {
+        securityLevel: 'loose', // safe as we dont allow mermaid in user content. allows for additional interactivity
+        theme: 'base',
+        themeVariables: { // values from 'IPFS brand sheet' at https://github.com/ipfs/ipfs-gui#resources
+          primaryColor: '#D7EDF1',
+          edgeLabelBackground:'#edf0f4',
+          tertiaryColor: '#edf0f4'
+        },
+        deterministicIds: true,
+        deterministicIDSeed: DEPLOY_DOMAIN,
+        flowchart: {
+          htmlLabels: true,
+          curve: 'basis',
+          useMaxWidth: false
+        }
+      }
+    ],
     'tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
