@@ -6,13 +6,13 @@ The goal of this page is to provide some suggestions and best practices for web 
 
 ## Detecting content-addressed resources
 
-In many cases IPFS resource can be detected just by looking at URI, especially if it is a HTTP URL pointing at a public gateway. This allows browser to upgrade transport protocol to IPFS, and removed the need for sending HTTP request to a remote server.
+In many cases IPFS resources can be detected just by looking at the URI, especially if it is an HTTP URL pointing at a public gateway. This allows a browser to upgrade the transport protocol to IPFS, and remove the need for sending an HTTP request to a remote server.
 
 The high level heuristic is to check, in order:
 - Does the `URL` follow [path or subdomain gateway](/how-to/address-ipfs-on-web/) convention?
 - If not, does [DNSLink](/concepts/dnslink/) with an IPFS path exist for `URL.hostname`?
 
-If any of the above is true, an user agent should be able to find a content path that can be used for data retrieval over IPFS. See the illustration below.
+If any of the above is true, a user agent should be able to find a content path that can be used for data retrieval over IPFS. See the illustration below.
 
 ```mermaid
 flowchart TD
