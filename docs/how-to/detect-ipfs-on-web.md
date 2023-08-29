@@ -1,6 +1,6 @@
-# Detect IPFS on the Web
+# Discover IPFS content from web2
 
-Below is the suggested heuristic for detecting content-addressed resources on the web, and presenting additional user interface for interacting with them.
+Below is the suggested heuristic for detecting content-addressed resources on the web, and presenting additional user interface for interacting with that content.
 
 The goal of this page is to provide some suggestions and best practices for web browsers and other [user agents](https://en.wikipedia.org/wiki/User_agent) that are interested in adding support for [content-addressed resources on the Web](/how-to/address-ipfs-on-web).
 
